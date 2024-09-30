@@ -6,8 +6,8 @@ describe('Testes automatizados de API para o desafio técnico da NTT Data', () =
             method: 'POST', 
             url: 'https://serverest.dev/login',
             body: {
-                "email": "teste@teste.com",
-                "password": "12345"
+                "email": Cypress.env('login_email'),
+                "password": Cypress.env('login_password')
             }
         }).then((response) => {
             expect(response.status).to.eq(200);
@@ -23,8 +23,8 @@ describe('Testes automatizados de API para o desafio técnico da NTT Data', () =
             method: 'POST', 
             url: 'https://serverest.dev/login',
             body: {
-                "email": "teste@teste.com",
-                "password": "qa123"
+                "email": Cypress.env('login_email'),
+                "password": Cypress.env('login_wrong_password')
             },
             failOnStatusCode: false
         }).then((response) => {
@@ -44,7 +44,7 @@ describe('Testes automatizados de API para o desafio técnico da NTT Data', () =
             body: {
                 "produtos": [
                     {
-                        "idProduto": "BeeJh5lz3k6kSIzA",
+                        "idProduto": "xDldIkmCg6ZZgEfJ",
                         "quantidade": 1
                     },
                     {

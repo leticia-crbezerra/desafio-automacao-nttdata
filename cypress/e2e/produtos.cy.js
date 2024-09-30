@@ -7,14 +7,14 @@ describe('Testes automatizados E2E para o desafio técnico da NTT Data', () => {
   })
 
   it('Tentar cadastrar um produto sem informar os campos obrigatórios', () => {
-    cy.visit('https://front.serverest.dev/admin/cadastrarprodutos')
+    cy.visit('/admin/cadastrarprodutos')
     produto.clickBotaoCadastrarProduto()
     produto.scrollToTop()
     produto.verificarCamposObrigatorios()
   })
 
   it('Cadastrar produto com PageObjects', () => {
-    cy.visit('https://front.serverest.dev/admin/cadastrarprodutos')    
+    cy.visit('/admin/cadastrarprodutos')    
     produto.setNomeProduto('HyperX Solocast')
     produto.setPrecoProduto('330')
     produto.setDescricaoProduto('Microfone USB fácil de usar para streamers e criadores de conteúdo.')
@@ -26,7 +26,7 @@ describe('Testes automatizados E2E para o desafio técnico da NTT Data', () => {
   })
 
   it('Excluir produto', () => {
-    cy.visit('https://front.serverest.dev/admin/listarprodutos')
+    cy.visit('/admin/listarprodutos')
     produto.deleteProduto()
     produto.verificarProdutoExcluido()
 
